@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Received Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-indigo-400 mb-8">Received Messages</h1>
+        
+        {% if messages %}
+            <div class="space-y-4">
+                {% for msg in messages %}
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-100">{{ msg.sender_name }}</h3>
+                                <p class="text-sm text-indigo-400">{{ msg.email }}</p>
+                            </div>
+                            <span class="text-xs text-slate-400">{{ msg.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+                        </div>
+                        <p class="text-slate-300 bg-slate-900/50 p-4 rounded-lg border border-slate-700/50 leading-relaxed">
+                            {{ msg.content }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-slate-400">No messages received yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
