@@ -8,23 +8,52 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
     <div class="max-w-3xl mx-auto px-6 py-12 w-full space-y-8">
+        
+        <!-- Header Section with Profile Photo & Social Links -->
         <header class="text-center mb-12 flex flex-col items-center">
-            <!-- Profile Photo -->
             <img 
                 src="profile-photo.jpg" 
                 alt="Daylon Rock" 
                 class="w-32 h-32 rounded-full border-4 border-indigo-500 shadow-lg mb-6 object-cover"
             />
             <h1 class="text-4xl font-extrabold tracking-tight text-indigo-400 mb-2">Daylon Rock</h1>
-            <p class="text-slate-400 text-lg">IT Infrastructure & Cloud Enthusiast</p>
+            <p class="text-slate-400 text-lg mb-4">IT Infrastructure & Cloud Specialist</p>
+            
+            <!-- Professional Social Links -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
+                    LinkedIn (#RockIT)
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
+                    GitHub
+                </a>
+                <a href="mailto:contact@daylonrock.co.za" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
+                    Email Me
+                </a>
+            </div>
         </header>
+
+        <!-- Core Expertise & Certifications Section -->
+        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <h2 class="text-2xl font-bold mb-4 text-slate-100">Core Expertise</h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Over 20 years of experience bridging internal systems support, enterprise hardware deployments, and modern cloud infrastructure automation.
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">CompTIA Network+</span>
+                <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">Azure Bicep & PowerShell</span>
+                <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">Enterprise Print Management (Papercut)</span>
+                <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">End-User Support & Desktop Admin</span>
+                <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">DNS & Network Routing</span>
+            </div>
+        </section>
 
         <!-- Infrastructure & Projects Section -->
         <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold mb-6 text-slate-100">Infrastructure & Projects</h2>
             <div class="space-y-6">
                 <!-- Project 1 -->
-                <div class="border-b border-slate-700 pb-6">
+                <div class="border-b border-slate-700 pb-6 hover:border-indigo-500/50 transition-all duration-300 p-2 rounded-lg">
                     <h3 class="text-lg font-semibold text-indigo-300 mb-2">Azure Cloud & Bicep Automation</h3>
                     <p class="text-slate-300 text-sm leading-relaxed mb-3">
                         Designed modular Azure Bicep templates and Azure PowerShell scripts to streamline virtual network configurations and virtual machine deployments.
@@ -37,7 +66,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div>
+                <div class="hover:border-indigo-500/50 transition-all duration-300 p-2 rounded-lg">
                     <h3 class="text-lg font-semibold text-indigo-300 mb-2">Enterprise Warehouse Migration</h3>
                     <p class="text-slate-300 text-sm leading-relaxed mb-3">
                         Coordinated and executed a full site IT infrastructure migration, managing vendor network deployments and direct physical installation of end-user workstations and print systems.
@@ -51,6 +80,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <main class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold mb-6 text-slate-100">Leave a Message</h2>
             
@@ -79,7 +109,7 @@
     </div>
 
     <footer class="text-center py-6 text-slate-500 text-sm">
-        &copy; 2026 Daylon Rock. All rights reserved.
+        &copy; 2026 Daylon Rock. All rights reserved. &bull; daylonrock.co.za
     </footer>
 
     <!-- JavaScript to handle Formspree submission -->
