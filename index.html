@@ -9,7 +9,7 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
     <div class="max-w-3xl mx-auto px-6 py-12 w-full space-y-8">
         
-        <!-- Header Section with Profile Photo, Resume Button & Social Links -->
+        <!-- Header Section with Profile Photo, Document Downloads & Social Links -->
         <header class="text-center mb-12 flex flex-col items-center">
             <img 
                 src="profile-photo.jpg" 
@@ -19,7 +19,7 @@
             <h1 class="text-4xl font-extrabold tracking-tight text-indigo-400 mb-2">Daylon Rock</h1>
             <p class="text-slate-400 text-lg mb-4">IT Infrastructure & Cloud Specialist</p>
             
-            <!-- Professional Links & Resume Download -->
+            <!-- Professional Links -->
             <div class="flex flex-wrap justify-center gap-3 mb-4">
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
                     LinkedIn (#RockIT)
@@ -32,10 +32,15 @@
                 </a>
             </div>
 
-            <!-- Download Resume Button (Change 'resume.pdf' to your actual filename) -->
-            <a href="resume.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors shadow-md">
-                Download Resume (PDF)
-            </a>
+            <!-- Resume & Endorsement Download Buttons -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="resume.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors shadow-md">
+                    Download Resume (PDF)
+                </a>
+                <a href="AutoXRef.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 rounded-lg transition-colors shadow-md">
+                    Download AutoX Endorsement (PDF)
+                </a>
+            </div>
         </header>
 
         <!-- Executive Impact Metrics Grid (Targeting Recruiters & Senior Managers) -->
@@ -136,6 +141,16 @@
                     Explore Series on LinkedIn
                 </a>
             </div>
+        </section>
+
+        <!-- Endorsement / Testimonial Section -->
+        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <span class="px-3 py-1 text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full uppercase tracking-wider">Endorsement</span>
+            <h2 class="text-2xl font-bold text-slate-100 mt-3 mb-4">Leadership Recommendation</h2>
+            <blockquote class="text-slate-300 text-sm italic leading-relaxed border-l-4 border-emerald-500 pl-4 my-4">
+                "Daylon consistently demonstrated exceptional technical expertise, reliability, and leadership across our IT infrastructure operations during his tenure at AutoX..."
+            </blockquote>
+            <p class="text-xs text-slate-400 font-semibold mt-2">— Management, AutoX</p>
         </section>
 
         <!-- Professional References Callout for Senior Managers -->
