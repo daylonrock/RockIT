@@ -9,7 +9,7 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
     <div class="max-w-3xl mx-auto px-6 py-12 w-full space-y-8">
         
-        <!-- Header Section with Profile Photo & Social Links -->
+        <!-- Header Section with Profile Photo, Resume Button & Social Links -->
         <header class="text-center mb-12 flex flex-col items-center">
             <img 
                 src="profile-photo.jpg" 
@@ -19,8 +19,8 @@
             <h1 class="text-4xl font-extrabold tracking-tight text-indigo-400 mb-2">Daylon Rock</h1>
             <p class="text-slate-400 text-lg mb-4">IT Infrastructure & Cloud Specialist</p>
             
-            <!-- Professional Social Links -->
-            <div class="flex flex-wrap justify-center gap-3">
+            <!-- Professional Links & Resume Download -->
+            <div class="flex flex-wrap justify-center gap-3 mb-4">
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
                     LinkedIn (#RockIT)
                 </a>
@@ -31,13 +31,18 @@
                     Email Me
                 </a>
             </div>
+
+            <!-- Download Resume Button (Change 'resume.pdf' to your actual filename) -->
+            <a href="resume.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors shadow-md">
+                Download Resume (PDF)
+            </a>
         </header>
 
         <!-- Core Expertise & Certifications Section -->
         <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold mb-4 text-slate-100">Core Expertise</h2>
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                Over 20 years of experience bridging internal systems support, enterprise hardware deployments, and modern cloud infrastructure automation.
+                Over 20 years of technical experience bridging internal systems support, enterprise hardware deployments, and modern cloud infrastructure automation.
             </p>
             <div class="flex flex-wrap gap-2">
                 <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">CompTIA Network+</span>
@@ -45,6 +50,27 @@
                 <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">Enterprise Print Management (Papercut)</span>
                 <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">End-User Support & Desktop Admin</span>
                 <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 border border-indigo-900/50 rounded-lg">DNS & Network Routing</span>
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 text-slate-100">Professional Experience</h2>
+            <div class="space-y-6 border-l-2 border-indigo-500/30 pl-6 ml-2">
+                <div>
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Present</span>
+                    <h3 class="text-lg font-semibold text-slate-100 mt-1">IT End User Support & Infrastructure Specialist</h3>
+                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                        Specializing in advanced systems administration, Azure cloud automation (Bicep/PowerShell), and large-scale site infrastructure migrations including workstation deployments and enterprise print systems.
+                    </p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">2011 – 2023</span>
+                    <h3 class="text-lg font-semibold text-slate-100 mt-1">Systems Support & Administration (AutoX)</h3>
+                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                        Provided robust enterprise IT support, technical administration, and hardware/software infrastructure management across internal environments for over 11 years.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -77,6 +103,22 @@
                         <span class="px-2.5 py-0.5 text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full">Papercut</span>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- #RockIT LinkedIn Series Spotlight -->
+        <section class="bg-gradient-to-r from-indigo-950/60 to-slate-800 border border-indigo-500/30 rounded-xl p-8 shadow-xl">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                    <span class="px-3 py-1 text-xs font-semibold bg-indigo-900 text-indigo-200 rounded-full uppercase tracking-wider">Thought Leadership</span>
+                    <h2 class="text-2xl font-bold text-slate-100 mt-2">Diary of a "Rock" Solid IT Pro</h2>
+                    <p class="text-slate-300 text-sm mt-2 leading-relaxed max-w-xl">
+                        Exploring real-world end-user support interactions, troubleshooting lessons, and IT infrastructure insights shared weekly on LinkedIn under <strong class="text-indigo-300">#RockIT</strong>.
+                    </p>
+                </div>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-5 py-3 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors whitespace-nowrap shadow-md">
+                    Explore Series on LinkedIn
+                </a>
             </div>
         </section>
 
