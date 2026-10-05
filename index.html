@@ -13,25 +13,27 @@
             <p class="text-slate-400 text-lg">IT Infrastructure & Cloud Enthusiast</p>
         </header>
 
-        <!-- Flash messages block removed because Azure Static Web Apps cannot process server-side flash messages -->
-
         <main class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold mb-6 text-slate-100">Leave a Message</h2>
-            <!-- Note: Form submission action will need a static backend target or Azure Function API -->
-            <form action="/api/submit" method="POST" class="space-y-4">
+            
+            <!-- Success/Error Notification Banner -->
+            <div id="form-status" class="hidden mb-6 p-4 rounded-lg text-sm"></div>
+
+            <!-- Form without action/method attributes to allow async JS handling -->
+            <form id="contactForm" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Your Name</label>
-                    <input type="text" name="sender_name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500">
+                    <input type="text" id="sender_name" name="sender_name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
-                    <input type="email" name="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500">
+                    <input type="email" id="email" name="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Message</label>
-                    <textarea name="content" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500"></textarea>
+                    <textarea id="content" name="content" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-lg transition-colors duration-200">
+                <button type="submit" id="submit-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-lg transition-colors duration-200">
                     Send Message
                 </button>
             </form>
@@ -41,10 +43,8 @@
     <footer class="text-center py-6 text-slate-500 text-sm">
         &copy; 2026 Daylon Rock. All rights reserved.
     </footer>
-</body>
-</html>
 
-<!-- JavaScript to handle API submission -->
+    <!-- JavaScript placed properly inside the body so it runs -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
