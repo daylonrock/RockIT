@@ -1,22 +1,19 @@
-const { app } = require('@azure/functions');
+cmodule.exports = async function (context, req) {
+    context.log('Contact form API triggered.');
 
-app.http('submit', {
-    methods: ['POST'],
-    authLevel: 'anonymous',
-    handler: async (request, context) => {
-        try {
-            const data = await request.json();
-            context.log(`Message received from ${data.email}`);
+    const name = req.body && req.body.sender_name;
+    const email = req.body && req.body.email;
+    const content = req.body && req.body.content;
 
-            return {
-                status: 200,
-                body: JSON.stringify({ success: true, message: 'Message received successfully!' })
-            };
-        } catch (error) {
-            return {
-                status: 400,
-                body: JSON.stringify({ success: false, error: 'Invalid request data' })
-            };
-        }
+    if (name && email && content) {
+        context.res = {
+            status: 200,
+            body: { success: true, message: 'Message received successfully!' }
+        };
+    } else {
+        context.res = {
+            status: 400,
+            body: { success: false, error: 'Please provide all required fields.' }
+        };
     }
-});
+};
