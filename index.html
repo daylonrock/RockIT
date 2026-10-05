@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }} | Professional Portfolio</title>
+    <title>Daylon Rock | Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
     <div class="max-w-3xl mx-auto px-6 py-12 w-full">
         <header class="text-center mb-12">
-            <h1 class="text-4xl font-extrabold tracking-tight text-indigo-400 mb-2">{{ name }}</h1>
+            <h1 class="text-4xl font-extrabold tracking-tight text-indigo-400 mb-2">Daylon Rock</h1>
             <p class="text-slate-400 text-lg">IT Infrastructure & Cloud Enthusiast</p>
         </header>
 
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            {% for category, message in messages %}
-              <div class="mb-6 p-4 rounded-lg {% if category == 'success' %}bg-emerald-900/50 border border-emerald-500 text-emerald-200{% else %}bg-rose-900/50 border border-rose-500 text-rose-200{% endif %}">
-                {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
+        <!-- Flash messages block removed because Azure Static Web Apps cannot process server-side flash messages -->
 
         <main class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
             <h2 class="text-2xl font-bold mb-6 text-slate-100">Leave a Message</h2>
-            <form action="/submit" method="POST" class="space-y-4">
+            <!-- Note: Form submission action will need a static backend target or Azure Function API -->
+            <form action="/api/submit" method="POST" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Your Name</label>
                     <input type="text" name="sender_name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500">
@@ -46,7 +39,7 @@
     </div>
 
     <footer class="text-center py-6 text-slate-500 text-sm">
-        &copy; 2026 {{ name }}. All rights reserved.
+        &copy; 2026 Daylon Rock. All rights reserved.
     </footer>
 </body>
 </html>
