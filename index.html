@@ -288,12 +288,11 @@
         <!-- Visitor Counter Widget -->
         <div class="text-xs text-slate-400 flex justify-center items-center gap-1">
             <span>Visitor Count:</span>
-            <img src="https://api.countapi.xyz/hit/daylonrock.co.za/visits" alt="Visitor Count" class="inline-block h-4" onerror="this.style.display='none'; document.getElementById('fallback-counter').style.display='inline';" />
-            <span id="fallback-counter" style="display:none;" class="font-mono text-indigo-400 dark:text-emerald-400">Live</span>
+            <span id="visitor-count" class="font-mono text-indigo-400 dark:text-emerald-400 font-semibold">Loading...</span>
         </div>
     </footer>
 
-    <!-- JavaScript to handle Formspree submission and Theme Toggle -->
+    <!-- JavaScript to handle Formspree, Theme Toggle, and Visitor Counter -->
     <script>
         function toggleTheme() {
             const body = document.getElementById('body-theme');
@@ -317,12 +316,27 @@
             }
         }
 
-        // Check saved theme preference on load
+        // Check saved theme preference and fetch visitor count on load
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('portfolio-theme');
             if (savedTheme === 'terminal') {
                 toggleTheme();
             }
+
+            // Fetch live visitor count
+            fetch('https://api.counterapi.dev/v1/daylonrock/visits/up')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('visitor-count');
+                    if (data && data.count) {
+                        countElement.textContent = data.count.toLocaleString();
+                    } else {
+                        countElement.textContent = 'Live';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('visitor-count').textContent = 'Live';
+                });
         });
 
         // Formspree submission handler
