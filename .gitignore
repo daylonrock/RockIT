@@ -1,0 +1,15 @@
+# Operating System junk
+.DS_Store
+Thumbs.db
+
+# VS Code local settings
+.vscode/
+
+# Environment variables and secrets
+.env
+*.pem
+*.key
+
+# Azure / Bicep local build artifacts
+*.publish.json
+.azure/
