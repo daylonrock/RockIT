@@ -282,8 +282,15 @@
         </main>
     </div>
 
-    <footer class="text-center py-6 text-slate-500 text-sm">
-        &copy; 2026 Daylon Rock. All rights reserved. &bull; daylonrock.co.za
+    <!-- Footer with Integrated Visitor Counter -->
+    <footer class="text-center py-6 text-slate-500 text-sm space-y-2">
+        <p>&copy; 2026 Daylon Rock. All rights reserved. &bull; daylonrock.co.za</p>
+        <!-- Visitor Counter Widget -->
+        <div class="text-xs text-slate-400 flex justify-center items-center gap-1">
+            <span>Visitor Count:</span>
+            <img src="https://api.countapi.xyz/hit/daylonrock.co.za/visits" alt="Visitor Count" class="inline-block h-4" onerror="this.style.display='none'; document.getElementById('fallback-counter').style.display='inline';" />
+            <span id="fallback-counter" style="display:none;" class="font-mono text-indigo-400 dark:text-emerald-400">Live</span>
+        </div>
     </footer>
 
     <!-- JavaScript to handle Formspree submission and Theme Toggle -->
