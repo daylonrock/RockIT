@@ -261,11 +261,11 @@
             <!-- Success/Error Notification Banner -->
             <div id="form-status" class="hidden mb-6 p-4 rounded-lg text-sm"></div>
 
-            <!-- Form without action/method attributes to allow async JS handling -->
+            <!-- Form with Formspree attributes configured correctly -->
             <form id="contactForm" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Your Name</label>
-                    <input type="text" id="sender_name" name="sender_name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500">
+                    <input type="text" id="sender_name" name="name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
@@ -273,7 +273,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-slate-300 mb-1">Message</label>
-                    <textarea id="content" name="content" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500"></textarea>
+                    <textarea id="content" name="message" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500"></textarea>
                 </div>
                 <button type="submit" id="submit-btn" class="w-full bg-indigo-600 dark:bg-emerald-700 hover:bg-indigo-500 dark:hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200">
                     Send Message
@@ -337,9 +337,9 @@
             statusDiv.classList.add('hidden');
 
             const formData = {
-                sender_name: document.getElementById('sender_name').value,
+                name: document.getElementById('sender_name').value,
                 email: document.getElementById('email').value,
-                content: document.getElementById('content').value
+                message: document.getElementById('content').value
             };
 
             try {
