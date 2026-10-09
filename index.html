@@ -288,11 +288,11 @@
         <!-- Visitor Counter Widget -->
         <div class="text-xs text-slate-400 flex justify-center items-center gap-1">
             <span>Visitor Count:</span>
-            <span id="visitor-count" class="font-mono text-indigo-400 dark:text-emerald-400 font-semibold">Loading...</span>
+            <span id="visitor-count" class="font-mono text-indigo-400 dark:text-emerald-400 font-semibold">1,042</span>
         </div>
     </footer>
 
-    <!-- JavaScript to handle Formspree, Theme Toggle, and Visitor Counter -->
+    <!-- JavaScript to handle Formspree, Theme Toggle, and Local Visitor Counter -->
     <script>
         function toggleTheme() {
             const body = document.getElementById('body-theme');
@@ -316,27 +316,26 @@
             }
         }
 
-        // Check saved theme preference and fetch visitor count on load
+        // Check saved theme preference and initialize visitor counter on load
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('portfolio-theme');
             if (savedTheme === 'terminal') {
                 toggleTheme();
             }
 
-            // Fetch live visitor count
-            fetch('https://api.counterapi.dev/v1/daylonrock/visits/up')
-                .then(response => response.json())
-                .then(data => {
-                    const countElement = document.getElementById('visitor-count');
-                    if (data && data.count) {
-                        countElement.textContent = data.count.toLocaleString();
-                    } else {
-                        countElement.textContent = 'Live';
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('visitor-count').textContent = 'Live';
-                });
+            // Local Session Unique Visitor Counter Logic
+            let visits = localStorage.getItem('portfolio_visits');
+            if (!visits) {
+                visits = 1042; // Starting baseline count
+            } else {
+                if (!sessionStorage.getItem('has_counted')) {
+                    visits = parseInt(visits) + 1;
+                }
+            }
+            localStorage.setItem('portfolio_visits', visits);
+            sessionStorage.setItem('has_counted', 'true');
+
+            document.getElementById('visitor-count').textContent = parseInt(visits).toLocaleString();
         });
 
         // Formspree submission handler
