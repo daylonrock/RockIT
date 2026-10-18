@@ -27,6 +27,11 @@
             }
         }
     </script>
+    <style>
+        .fade-slide {
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+    </style>
 </head>
 <body id="body-theme" class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300">
     
@@ -271,25 +276,64 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
             </div>
         </section>
 
-        <!-- Endorsement / Testimonial Section with Grid -->
+        <!-- ALTERNATING / DYNAMIC ENDORSEMENTS ROTATOR SECTION -->
         <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
-            <span class="px-3 py-1 text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full uppercase tracking-wider">Endorsement</span>
-            <h2 class="text-2xl font-bold text-slate-100 mt-3 mb-4">Leadership Recommendation</h2>
-            <blockquote class="text-slate-300 text-sm italic leading-relaxed border-l-4 border-emerald-500 pl-4 my-4">
-                "Daylon consistently demonstrated exceptional technical expertise, reliability, and leadership across our IT infrastructure operations during his tenure at AutoX..."
-            </blockquote>
-            <p class="text-xs text-slate-400 font-semibold mb-6">— Technical Director</p>
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <span class="px-3 py-1 text-xs font-semibold bg-indigo-950 dark:bg-emerald-950 text-indigo-300 dark:text-emerald-300 border border-indigo-800 dark:border-emerald-800 rounded-full uppercase tracking-wider">Endorsements</span>
+                    <h2 class="text-2xl font-bold text-slate-100 mt-2">Leadership & Peer Recommendations</h2>
+                </div>
+            </div>
+            <p class="text-slate-300 text-sm mb-6">Highlights from engineering directors, managers, and technical colleagues.</p>
 
-            <!-- Peer & Operations Recommendations Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-700 pt-6">
-                <div class="bg-slate-900/60 border border-slate-700/80 p-4 rounded-lg">
-                    <p class="text-xs text-slate-300 italic mb-2">&ldquo;Daylon is the definition of a dependable IT professional. Whether resolving complex network failures or managing full migrations, he gets it done seamlessly.&rdquo;</p>
-                    <span class="text-xs font-semibold text-indigo-400 dark:text-emerald-400">— Senior Systems Administrator</span>
+            <!-- Carousel Container with Pause on Hover -->
+            <div id="endorsement-carousel" class="relative bg-slate-900 border border-slate-700 rounded-xl p-6 shadow-lg overflow-hidden min-h-[170px] flex flex-col justify-between" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+                
+                <!-- Slides Wrapper -->
+                <div class="relative min-h-[90px] flex items-center">
+                    
+                    <!-- Slide 1: Technical Director -->
+                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-100 fade-slide">
+                        <p class="text-sm italic text-slate-200 leading-relaxed">&ldquo;Daylon consistently demonstrated exceptional technical expertise, reliability, and leadership across our IT infrastructure operations during his tenure at AutoX...&rdquo;</p>
+                        <div class="mt-3 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-indigo-400 dark:text-emerald-400">— Technical Director</span>
+                            <span class="text-slate-500 font-mono">1 / 3</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Senior Systems Administrator -->
+                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-0 pointer-events-none fade-slide">
+                        <p class="text-sm italic text-slate-200 leading-relaxed">&ldquo;Daylon is the definition of a dependable IT professional. Whether resolving complex network failures or managing full migrations, he gets it done seamlessly.&rdquo;</p>
+                        <div class="mt-3 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-indigo-400 dark:text-emerald-400">— Senior Systems Administrator</span>
+                            <span class="text-slate-500 font-mono">2 / 3</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Operations Manager -->
+                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-0 pointer-events-none fade-slide">
+                        <p class="text-sm italic text-slate-200 leading-relaxed">&ldquo;Calm under pressure during high-priority incident spikes. His communication with non-technical organizational staff is second to none.&rdquo;</p>
+                        <div class="mt-3 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-indigo-400 dark:text-emerald-400">— Operations Manager</span>
+                            <span class="text-slate-500 font-mono">3 / 3</span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="bg-slate-900/60 border border-slate-700/80 p-4 rounded-lg">
-                    <p class="text-xs text-slate-300 italic mb-2">&ldquo;Calm under pressure during high-priority incident spikes. His communication with non-technical organizational staff is second to none.&rdquo;</p>
-                    <span class="text-xs font-semibold text-indigo-400 dark:text-emerald-400">— Operations Manager</span>
+
+                <!-- Carousel Controls & Indicators -->
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-slate-800 text-sm text-slate-400">
+                    <div class="flex space-x-2" id="carousel-dots">
+                        <button onclick="currentSlide(0)" class="w-2.5 h-2.5 rounded-full bg-indigo-500 dark:bg-emerald-500 transition"></button>
+                        <button onclick="currentSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-700 transition"></button>
+                        <button onclick="currentSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-700 transition"></button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="prevSlide()" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition"><i class="fas fa-chevron-left">&larr; Prev</i></button>
+                        <button onclick="nextSlide()" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition"><i class="fas fa-chevron-right">Next &rarr;</i></button>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -339,7 +383,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
         </div>
     </footer>
 
-    <!-- JavaScript to handle Formspree, Theme Toggle, and Local Visitor Counter -->
+    <!-- JavaScript to handle Formspree, Theme Toggle, Local Visitor Counter, and Endorsements Carousel -->
     <script>
         function toggleTheme() {
             const body = document.getElementById('body-theme');
@@ -384,6 +428,59 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 
             document.getElementById('visitor-count').textContent = parseInt(visits).toLocaleString();
         });
+
+        // Endorsements Carousel Logic
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.endorsement-slide');
+        const dots = document.querySelectorAll('#carousel-dots button');
+        let slideInterval = setInterval(nextSlide, 6000);
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                const activeColorClass = document.body.classList.contains('font-mono') ? 'bg-emerald-500' : 'bg-indigo-500';
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                    dots[i].classList.remove('bg-slate-700');
+                    dots[i].classList.add('bg-indigo-500', 'dark:bg-emerald-500');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                    dots[i].classList.remove('bg-indigo-500', 'dark:bg-emerald-500');
+                    dots[i].classList.add('bg-slate-700');
+                }
+            });
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+            resetTimer();
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            showSlide(slideIndex);
+            resetTimer();
+        }
+
+        function pauseCarousel() {
+            clearInterval(slideInterval);
+        }
+
+        function resumeCarousel() {
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 6000);
+        }
 
         // Formspree submission handler using FormData and Accept: application/json
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
