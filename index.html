@@ -3,606 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daylon Rock | End User Support Specialist</title>
-    
-    <!-- Open Graph / Social Media Link Preview Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://daylonrock.co.za/">
-    <meta property="og:title" content="Daylon Rock | End User Support Specialist">
-    <meta property="og:description" content="20+ years of enterprise IT support, site migrations, M365/Entra ID administration, and cloud upskilling in Azure Bicep & PowerShell.">
-    <meta property="og:image" content="https://daylonrock.co.za/profile-photo.jpg">
-
-    <!-- Silences missing favicon 404 warning -->
-    <link rel="icon" href="data:,">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        mono: ["'Courier New'", 'Courier', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Daylon Rock | IT Professional Portfolio</title>
     <style>
-        .fade-slide {
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header, section {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #005a9c;
+        }
+        
+        /* Endorsements Section Styles */
+        #endorsements-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .endorsement-card {
+            background: #fdfdfd;
+            border-left: 4px solid #005a9c;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .endorsement-message {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .endorsement-name {
+            font-weight: bold;
+            margin: 0;
+            color: #222;
+        }
+        .endorsement-role {
+            font-size: 0.85rem;
+            color: #666;
         }
     </style>
 </head>
-<body id="body-theme" class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300">
-    
-    <!-- Top Theme Toggle Bar -->
-    <div class="max-w-3xl mx-auto px-6 pt-6 w-full flex justify-end">
-        <button id="theme-toggle" onclick="toggleTheme()" class="px-4 py-2 text-xs font-bold bg-slate-800 dark:bg-slate-800 border border-slate-700 rounded-lg shadow-md hover:bg-slate-700 transition-colors flex items-center gap-2">
-            <span id="theme-icon">&#128187;</span> <span id="theme-text">Switch to Terminal Theme</span>
-        </button>
-    </div>
+<body>
 
-    <div class="max-w-3xl mx-auto px-6 py-6 w-full space-y-8">
+    <!-- Header Section -->
+    <header>
+        <h1>Daylon Rock</h1>
+        <p>IT End User Support Specialist & Cloud Enthusiast</p>
+    </header>
+
+    <!-- Endorsements Section -->
+    <section id="endorsements-section">
+        <h2>Endorsements</h2>
+        <p>What colleagues and professional contacts say:</p>
         
-        <!-- Header Section with Profile Photo, Document Downloads & Social Links -->
-        <header class="text-center mb-12 flex flex-col items-center">
-            <img 
-                src="profile-photo.jpg" 
-                alt="Daylon Rock" 
-                class="w-32 h-32 rounded-full border-4 border-indigo-500 dark:border-emerald-500 shadow-lg mb-6 object-cover transition-colors duration-300"
-            />
-            <h1 id="header-title" class="text-4xl font-extrabold tracking-tight text-indigo-400 dark:text-emerald-400 mb-2 transition-colors duration-300">Daylon Rock</h1>
-            <p class="text-slate-400 dark:text-slate-300 text-lg mb-2">End User Support Specialist</p>
-            <p class="text-xs text-indigo-300 dark:text-emerald-300 font-medium mb-4">Based in Gqeberha, SA (GMT+2) &bull; Ready for Remote / Global Collaboration</p>
-            
-            <!-- Professional Links -->
-            <div class="flex flex-wrap justify-center gap-3 mb-4">
-                <a href="https://linkedin.com/in/daylonrock/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
-                    LinkedIn Profile & #RockIT
-                </a>
-                <a href="https://github.com/daylonrock/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
-                    GitHub
-                </a>
-                <a href="mailto:daylonrock@hotmail.com" class="px-4 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-emerald-300 dark:text-emerald-300 border border-slate-700 rounded-lg transition-colors flex items-center gap-2">
-                    Email Me
-                </a>
-            </div>
-
-            <!-- Resume & Endorsement Download Buttons -->
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="resume.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-indigo-600 dark:bg-emerald-700 hover:bg-indigo-500 dark:hover:bg-emerald-600 text-white rounded-lg transition-colors shadow-md">
-                    Download Resume (PDF)
-                </a>
-                <a href="AutoXRef.pdf" download class="inline-flex items-center px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 rounded-lg transition-colors shadow-md">
-                    Download AutoX Endorsement (PDF)
-                </a>
-            </div>
-        </header>
-
-        <!-- Executive Impact Metrics Grid (4 Columns) -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl shadow-lg">
-                <span class="text-3xl font-extrabold text-indigo-400 dark:text-emerald-400">20+</span>
-                <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Years Tech Experience</p>
-            </div>
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl shadow-lg">
-                <span class="text-3xl font-extrabold text-emerald-400">96%</span>
-                <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Consistent SLA Achievement</p>
-            </div>
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl shadow-lg">
-                <span class="text-3xl font-extrabold text-indigo-400 dark:text-emerald-400">100%</span>
-                <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Migration Execution</p>
-            </div>
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl shadow-lg">
-                <span class="text-3xl font-extrabold text-emerald-400">Evolving</span>
-                <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Expanding into Cloud & IaC</p>
-            </div>
-        </section>
-
-        <!-- Pro Bono / Pilot Project Offer Section -->
-        <section class="bg-indigo-950/40 dark:bg-emerald-950/40 border border-indigo-500/40 dark:border-emerald-500/40 rounded-xl p-8 shadow-xl">
-            <span class="px-3 py-1 text-xs font-semibold bg-indigo-900 dark:bg-emerald-900 text-indigo-200 dark:text-emerald-200 rounded-full uppercase tracking-wider">Zero-Risk Engagement</span>
-            <h2 class="text-2xl font-bold text-slate-100 mt-3 mb-3">Proving Value Through Azure & Cloud Action</h2>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                With over two decades in enterprise support and infrastructure operations, I believe in letting performance do the talking. I am actively expanding my capabilities into cloud tooling and automation, with a sharp focus on Azure environments, Bicep templates, and PowerShell automation.
-            </p>
-            <p class="text-slate-400 text-xs leading-relaxed">
-                To bridge the gap and demonstrate what I can deliver, I am open to discussing selective, timeboxed Azure-backed support tasks, resource deployments, or cloud migration audits on a pro bono basis. Zero risk for your team; a direct opportunity for me to prove my technical hunger and capability in the cloud space.
-            </p>
-        </section>
-
-        <!-- Grouped Tech Stack / Tooltip Badge Row -->
-        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold mb-4 text-slate-100">Technical Toolkit</h2>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                A structured overview of the enterprise hardware, cloud infrastructure, security tooling, and administration utilities I leverage daily.
-            </p>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Identity, Endpoint & Cloud Administration</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Microsoft 365 Administration</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Microsoft Entra ID (Azure AD)</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Active Directory Domain Services</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">IBM AS/400</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Cloud, Automation & Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Azure Infrastructure as Code (Bicep)</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Azure PowerShell / Az CLI</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Azure App Service</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Visual Studio Code</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Security & Mail Solutions</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Multi-Factor Authentication (MFA) & Conditional Access</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Mimecast Email Security</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">ESET PROTECT Enterprise</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">PaperCut MF Print Management</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Hardware Fleet & Infrastructure</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">HP Enterprise MFPs</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Zebra Industrial Label Printers</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Enterprise Workstation Hardware</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">UEFI Deployment & OS Imaging</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Barcode & Thermal Label Printing Solutions</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Peripheral Management & Driver Deployment</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Networking, ITSM & Collaboration</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">TCP/IP, DNS, DHCP Subnetting</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">LAN/WAN & Physical Cabling Diagnostics</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">VPN & Secure Remote Access</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Microsoft Dynamics 365 CRM</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">SharePoint Online & Technical Documentation</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">SLA & Incident Lifecycle Management</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-900 text-indigo-300 dark:text-emerald-300 border border-slate-700 rounded-lg">Remote Desktop & Screen Sharing Utilities</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Experience Timeline -->
-        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold mb-6 text-slate-100">Professional Experience</h2>
-            <div class="space-y-6 border-l-2 border-indigo-500/30 dark:border-emerald-500/30 pl-6 ml-2">
-                <div>
-                    <span class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 uppercase tracking-wider">2023 – Present</span>
-                    <h3 class="text-lg font-semibold text-slate-100 mt-1">End User Support Specialist</h3>
-                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                        Managing site infrastructure migrations, workstation deployments, and print environments while dedicating time to upskill in cloud infrastructure and modern scripting workflows.
-                    </p>
-                </div>
-                <div>
-                    <span class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 uppercase tracking-wider">2011 – 2023</span>
-                    <h3 class="text-lg font-semibold text-slate-100 mt-1">Customer Engineer (Outsourced at AutoX)</h3>
-                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                        Provided robust enterprise IT support, technical administration, and hardware/software infrastructure management across internal environments for over 12 years.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hands-On Projects & Upskilling -->
-        <section class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold mb-6 text-slate-100">Hands-On Projects & Upskilling</h2>
-            <div class="space-y-6">
-                <!-- Project 1 -->
-                <div class="border-b border-slate-700 pb-6 p-2 rounded-lg">
-                    <h3 class="text-lg font-semibold text-indigo-300 dark:text-emerald-300 mb-2">Enterprise Warehouse Migration</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-3">
-                        Coordinated and executed full-site IT infrastructure migrations, taking direct, hands-on responsibility for physical workstation installations, vendor network coordination, and print fleet setups.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full">Hardware Deployment</span>
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full">HP Managed MFPs</span>
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800 rounded-full">Papercut</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="p-2 rounded-lg">
-                    <h3 class="text-lg font-semibold text-indigo-300 dark:text-emerald-300 mb-2">Cloud Infrastructure Upskilling (Azure Bicep & PowerShell)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-3">
-                        Actively building and experimenting with modular Bicep templates and PowerShell scripts in VS Code to understand modern infrastructure-as-code principles and cloud resource provisioning.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-indigo-950 text-indigo-300 border border-indigo-800 rounded-full">Azure Fundamentals</span>
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-indigo-950 text-indigo-300 border border-indigo-800 rounded-full">PowerShell</span>
-                        <span class="px-2.5 py-0.5 text-xs font-medium bg-indigo-950 text-indigo-300 border border-indigo-800 rounded-full">Continuous Learning</span>
-                    </div>
-
-                    <!-- Expandable Azure Bicep Code Snippet Drawer -->
-                    <details class="bg-slate-900 border border-slate-700 rounded-lg p-4 cursor-pointer">
-                        <summary class="text-xs font-bold text-indigo-300 dark:text-emerald-300 flex items-center justify-between">
-                            <span>🔍 View Sample Azure Bicep Template (Storage Account Provisioning)</span>
-                            <span class="text-slate-400 text-xs font-normal">Click to Expand</span>
-                        </summary>
-                        <div class="mt-3">
-                            <p class="text-xs text-slate-400 mb-2">Modular IaC template created during Azure lab experiments:</p>
-                            <pre class="bg-black text-emerald-400 p-4 rounded-md text-xs font-mono overflow-x-auto border border-slate-800"><code>@description('Primary deployment region')
-param location string = resourceGroup().location
-
-@description('Storage Account SKU')
-param storageAccountSku string = 'Standard_LRS'
-
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
-  name: 'stdaylonrockprod01'
-  location: location
-  sku: {
-    name: storageAccountSku
-  }
-  kind: 'StorageV2'
-  properties: {
-    supportsHttpsTrafficOnly: true
-  }
-}</code></pre>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- #RockIT LinkedIn Series Spotlight with "Day in the Life" Anecdote -->
-        <section class="bg-gradient-to-r from-indigo-950/60 to-slate-800 dark:from-emerald-950/60 dark:to-slate-800 border border-indigo-500/30 dark:border-emerald-500/30 rounded-xl p-8 shadow-xl">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
-                <div>
-                    <span class="px-3 py-1 text-xs font-semibold bg-indigo-900 dark:bg-emerald-900 text-indigo-200 dark:text-emerald-200 rounded-full uppercase tracking-wider">Thought Leadership</span>
-                    <h2 class="text-2xl font-bold text-slate-100 mt-2">Diary of a "Rock" Solid IT Pro</h2>
-                    <p class="text-slate-300 text-sm mt-2 leading-relaxed max-w-xl">
-                        Sharing real-world end-user support lessons, troubleshooting stories, and professional growth insights weekly on LinkedIn under <strong class="text-indigo-300 dark:text-emerald-300">#RockIT</strong>.
-                    </p>
-                </div>
-                <a href="https://linkedin.com/in/daylonrock/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 text-xs font-bold bg-indigo-600 dark:bg-emerald-700 hover:bg-indigo-500 dark:hover:bg-emerald-600 text-white rounded-lg transition-colors whitespace-nowrap shadow-md">
-                    Explore Series on LinkedIn
-                </a>
-            </div>
-
-            <!-- Day in the Life Anecdote Snippet -->
-            <div class="bg-slate-900/80 border border-slate-700 rounded-lg p-5">
-                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">From the #RockIT Field Notes</span>
-                <p class="text-slate-300 text-sm italic leading-relaxed">
-                    &ldquo;End-user support isn't just about fixing a frozen screen or clearing a print queue; it's about restoring calm and confidence when someone's workday hits a wall. When you approach every ticket with patience and systems-thinking, troubleshooting becomes second nature.&rdquo;
-                </p>
-            </div>
-        </section>
-
-        <!-- ALTERNATING / DYNAMIC ENDORSEMENTS ROTATOR SECTION -->
-        <section class="bg-slate-800 border border-slate-700 rounded-xl p-6 sm:p-8 shadow-xl">
-            <div class="flex items-center justify-between mb-2">
-                <div>
-                    <span class="px-3 py-1 text-xs font-semibold bg-indigo-950 dark:bg-emerald-950 text-indigo-300 dark:text-emerald-300 border border-indigo-800 dark:border-emerald-800 rounded-full uppercase tracking-wider">Endorsements</span>
-                    <h2 class="text-2xl font-bold text-slate-100 mt-2">Leadership & Peer Recommendations</h2>
-                </div>
-            </div>
-            <p class="text-slate-300 text-sm mb-6">Highlights from engineering directors, managers, technical colleagues, and live site submissions.</p>
-
-            <!-- Carousel Container with Mobile-Safe Minimum Height -->
-            <div id="endorsement-carousel" class="relative bg-slate-900 border border-slate-700 rounded-xl p-5 sm:p-6 shadow-lg overflow-hidden min-h-[220px] sm:min-h-[180px] flex flex-col justify-between" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
-                
-                <!-- Slides Wrapper -->
-                <div id="carousel-slides" class="relative min-h-[140px] sm:min-h-[100px] flex items-center">
-                    
-                    <!-- Slide 1: Technical Director -->
-                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-100 fade-slide">
-                        <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed">&ldquo;Daylon consistently demonstrated exceptional technical expertise, reliability, and leadership across our IT infrastructure operations during his tenure at AutoX...&rdquo;</p>
-                        <div class="mt-4 pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                            <div class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 leading-tight">
-                                — Technical Director
-                            </div>
-                            <span class="slide-counter text-[11px] text-slate-500 font-mono">1 / 3</span>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: Senior Systems Administrator -->
-                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-0 pointer-events-none fade-slide">
-                        <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed">&ldquo;Daylon is the definition of a dependable IT professional. Whether resolving complex network failures or managing full migrations, he gets it done seamlessly.&rdquo;</p>
-                        <div class="mt-4 pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                            <div class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 leading-tight">
-                                — Senior Systems Administrator
-                            </div>
-                            <span class="slide-counter text-[11px] text-slate-500 font-mono">2 / 3</span>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: Operations Manager -->
-                    <div class="endorsement-slide absolute inset-0 flex flex-col justify-between opacity-0 pointer-events-none fade-slide">
-                        <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed">&ldquo;Calm under pressure during high-priority incident spikes. His communication with non-technical organizational staff is second to none.&rdquo;</p>
-                        <div class="mt-4 pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                            <div class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 leading-tight">
-                                — Operations Manager
-                            </div>
-                            <span class="slide-counter text-[11px] text-slate-500 font-mono">3 / 3</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Carousel Controls & Indicators (Separated at Bottom) -->
-                <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
-                    <div class="flex space-x-2 items-center" id="carousel-dots">
-                        <button onclick="currentSlide(0)" class="w-2.5 h-2.5 rounded-full bg-indigo-500 dark:bg-emerald-500 transition"></button>
-                        <button onclick="currentSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-700 transition"></button>
-                        <button onclick="currentSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-700 transition"></button>
-                    </div>
-                    <div class="flex space-x-2">
-                        <button onclick="prevSlide()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition border border-slate-700">&larr; Prev</button>
-                        <button onclick="nextSlide()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition border border-slate-700">Next &rarr;</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Professional References Callout -->
-        <section class="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center shadow-lg">
-            <h3 class="text-base font-semibold text-slate-200 mb-1">Professional Endorsements</h3>
-            <p class="text-slate-400 text-xs">
-                Detailed career history, professional recommendations, and leadership references from enterprise management (including AutoX) are available upon request.
-            </p>
-        </section>
-
-        <!-- Contact Section -->
-        <main class="bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold mb-6 text-slate-100">Leave a Message or Endorsement</h2>
-            
-            <!-- Success/Error Notification Banner -->
-            <div id="form-status" class="hidden mb-6 p-4 rounded-lg text-sm"></div>
-
-            <!-- Form configured for Formspree endpoint mbgdwbln -->
-            <form id="contactForm" action="https://formspree.io/f/mbgdwbln" method="POST" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Your Name</label>
-                    <input type="text" id="sender_name" name="name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
-                    <input type="email" id="email" name="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500">
-                </div>
-                
-                <!-- Optional Job Title / Company Field -->
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">
-                        Job Title / Company <span class="text-xs text-slate-500 font-normal">(Optional — for endorsements)</span>
-                    </label>
-                    <input 
-                        type="text" 
-                        id="sender_role" 
-                        name="role" 
-                        placeholder="e.g. IT Manager, AutoX / Industry Peer" 
-                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500 text-sm"
-                    >
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-1">Message / Endorsement</label>
-                    <textarea id="content" name="message" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-emerald-500"></textarea>
-                </div>
-                <button type="submit" id="submit-btn" class="w-full bg-indigo-600 dark:bg-emerald-700 hover:bg-indigo-500 dark:hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition-colors duration-200">
-                    Send Message
-                </button>
-            </form>
-        </main>
-    </div>
-
-    <!-- Footer with Integrated Visitor Counter -->
-    <footer class="text-center py-6 text-slate-500 text-sm space-y-2">
-        <p>&copy; 2026 Daylon Rock. All rights reserved. &bull; daylonrock.co.za</p>
-        <!-- Visitor Counter Widget -->
-        <div class="text-xs text-slate-400 flex justify-center items-center gap-1">
-            <span>Visitor Count:</span>
-            <span id="visitor-count" class="font-mono text-indigo-400 dark:text-emerald-400 font-semibold">1,042</span>
+        <!-- Dynamic endorsement cards will be injected here automatically by JavaScript -->
+        <div id="endorsements-container">
+            <p>Loading endorsements...</p>
         </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript to handle Formspree, Theme Toggle, Visitor Counter, and Mobile-Optimized Endorsement Injection -->
+    <!-- Frontend Scripting to Fetch Live Endorsements -->
     <script>
-        function toggleTheme() {
-            const body = document.getElementById('body-theme');
-            const themeText = document.getElementById('theme-text');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (body.classList.contains('font-mono')) {
-                // Switch back to Dark Mode
-                body.classList.remove('font-mono', 'bg-black', 'text-emerald-400');
-                body.classList.add('bg-slate-900', 'text-slate-100');
-                themeText.textContent = 'Switch to Terminal Theme';
-                themeIcon.innerHTML = '&#128187;';
-                localStorage.setItem('portfolio-theme', 'dark');
-            } else {
-                // Switch to Terminal Green-on-Black Theme
-                body.classList.remove('bg-slate-900', 'text-slate-100');
-                body.classList.add('font-mono', 'bg-black', 'text-emerald-400');
-                themeText.textContent = 'Switch to Standard Theme';
-                themeIcon.innerHTML = '&#9632;';
-                localStorage.setItem('portfolio-theme', 'terminal');
-            }
-        }
-
-        // Check saved theme preference and initialize visitor counter on load
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('portfolio-theme');
-            if (savedTheme === 'terminal') {
-                toggleTheme();
-            }
-
-            // Local Session Unique Visitor Counter Logic
-            let visits = localStorage.getItem('portfolio_visits');
-            if (!visits) {
-                visits = 1042; // Starting baseline count
-            } else {
-                if (!sessionStorage.getItem('has_counted')) {
-                    visits = parseInt(visits) + 1;
-                }
-            }
-            localStorage.setItem('portfolio_visits', visits);
-            sessionStorage.setItem('has_counted', 'true');
-
-            document.getElementById('visitor-count').textContent = parseInt(visits).toLocaleString();
-        });
-
-        // Endorsements Carousel Variables & Controls
-        let slideIndex = 0;
-        let slideInterval = setInterval(nextSlide, 6000);
-
-        function updateSlideCounters() {
-            const allSlides = document.querySelectorAll('.endorsement-slide');
-            allSlides.forEach((slide, idx) => {
-                const counter = slide.querySelector('.slide-counter');
-                if (counter) {
-                    counter.textContent = `${idx + 1} / ${allSlides.length}`;
-                }
-            });
-        }
-
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.endorsement-slide');
-            const dots = document.querySelectorAll('#carousel-dots button');
-            
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.remove('opacity-0', 'pointer-events-none');
-                    slide.classList.add('opacity-100');
-                    if (dots[i]) {
-                        dots[i].classList.remove('bg-slate-700');
-                        dots[i].classList.add('bg-indigo-500', 'dark:bg-emerald-500');
-                    }
-                } else {
-                    slide.classList.remove('opacity-100');
-                    slide.classList.add('opacity-0', 'pointer-events-none');
-                    if (dots[i]) {
-                        dots[i].classList.remove('bg-indigo-500', 'dark:bg-emerald-500');
-                        dots[i].classList.add('bg-slate-700');
-                    }
-                }
-            });
-        }
-
-        function nextSlide() {
-            const slides = document.querySelectorAll('.endorsement-slide');
-            if (slides.length === 0) return;
-            slideIndex = (slideIndex + 1) % slides.length;
-            showSlide(slideIndex);
-        }
-
-        function prevSlide() {
-            const slides = document.querySelectorAll('.endorsement-slide');
-            if (slides.length === 0) return;
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-            showSlide(slideIndex);
-            resetTimer();
-        }
-
-        function currentSlide(index) {
-            slideIndex = index;
-            showSlide(slideIndex);
-            resetTimer();
-        }
-
-        function pauseCarousel() {
-            clearInterval(slideInterval);
-        }
-
-        function resumeCarousel() {
-            slideInterval = setInterval(nextSlide, 6000);
-        }
-
-        function resetTimer() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 6000);
-        }
-
-        // Dynamically Append New Submitted Endorsement into Carousel (Mobile Safe Layout)
-        function appendLiveEndorsement(name, role, quote) {
-            const slidesContainer = document.getElementById('carousel-slides');
-            const dotsContainer = document.getElementById('carousel-dots');
-            const totalSlides = document.querySelectorAll('.endorsement-slide').length;
-            const newIndex = totalSlides;
-
-            // Create Slide Element with clean vertical room for mobile
-            const newSlide = document.createElement('div');
-            newSlide.className = "endorsement-slide absolute inset-0 flex flex-col justify-between opacity-0 pointer-events-none fade-slide";
-            newSlide.innerHTML = `
-                <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed">&ldquo;${quote}&rdquo;</p>
-                <div class="mt-4 pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                    <div class="text-xs font-semibold text-indigo-400 dark:text-emerald-400 leading-tight">
-                        — ${name} <span class="text-slate-400 font-normal">(${role})</span>
-                    </div>
-                    <span class="slide-counter text-[11px] text-slate-500 font-mono"></span>
-                </div>
-            `;
-            slidesContainer.appendChild(newSlide);
-
-            // Create Indicator Dot Element
-            const newDot = document.createElement('button');
-            newDot.className = "w-2.5 h-2.5 rounded-full bg-slate-700 transition";
-            newDot.onclick = () => currentSlide(newIndex);
-            dotsContainer.appendChild(newDot);
-
-            // Refresh Slide Counter Numbers & Transition
-            updateSlideCounters();
-            currentSlide(newIndex);
-        }
-
-        // Formspree submission handler
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('submit-btn');
-            const statusDiv = document.getElementById('form-status');
-            const form = e.target;
-            
-            const senderName = document.getElementById('sender_name').value;
-            const rawRole = document.getElementById('sender_role').value.trim();
-            const senderRole = rawRole !== '' ? rawRole : 'Professional Contact';
-            const message = document.getElementById('content').value;
-
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            statusDiv.classList.add('hidden');
-
-            const data = new FormData(form);
-
+        async function loadEndorsements() {
             try {
-                const response = await fetch('https://formspree.io/f/mbgdwbln', {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
+                const response = await fetch('/api/endorsements');
                 if (response.ok) {
-                    statusDiv.className = "mb-6 p-4 rounded-lg text-sm bg-emerald-900/50 border border-emerald-500 text-emerald-200";
-                    statusDiv.textContent = "Thank you! Your message has been sent successfully and added to the endorsement carousel.";
-                    statusDiv.classList.remove('hidden');
+                    const endorsements = await response.json();
+                    
+                    const container = document.getElementById('endorsements-container');
+                    if (!container) return;
+                    
+                    container.innerHTML = ''; // Clear loading message
 
-                    // Automatically render the user's message as an endorsement
-                    appendLiveEndorsement(senderName, senderRole, message);
-
-                    form.reset();
+                    if (endorsements.length === 0) {
+                        container.innerHTML = '<p>No approved endorsements yet. Check back soon!</p>';
+                        return;
+                    }
+                    
+                    endorsements.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'endorsement-card';
+                        card.innerHTML = `
+                            <p class="endorsement-message">"${escapeHtml(item.message)}"</p>
+                            <h4 class="endorsement-name">${escapeHtml(item.name)}</h4>
+                            <span class="endorsement-role">${escapeHtml(item.role)}</span>
+                        `;
+                        container.appendChild(card);
+                    });
                 } else {
-                    const result = await response.json();
-                    throw new Error(result.error || 'Submission failed.');
+                    console.error('Failed to load endorsements from API');
+                    document.getElementById('endorsements-container').innerHTML = '<p>Could not load endorsements at this time.</p>';
                 }
-            } catch (error) {
-                statusDiv.className = "mb-6 p-4 rounded-lg text-sm bg-rose-900/50 border border-rose-500 text-rose-200";
-                statusDiv.textContent = "Failed to send message. Please ensure your form is active or try again later.";
-                statusDiv.classList.remove('hidden');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Send Message';
+            } catch (err) {
+                console.warn('Network error or API offline:', err);
+                document.getElementById('endorsements-container').innerHTML = '<p>Could not connect to backend API.</p>';
             }
-        });
+        }
+
+        // Security helper function to prevent cross-site scripting (XSS)
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Run when the web page loads
+        document.addEventListener('DOMContentLoaded', loadEndorsements);
     </script>
+
 </body>
 </html>
