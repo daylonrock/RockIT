@@ -443,21 +443,67 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
             }
 
             // Local Session Unique Visitor Counter Logic
-            let visits = localStorage.getItem('portfolio_visits');
+            let visits = localStorage.getItem('portfolio-visits');
             if (!visits) {
-                visits = 1042; // Starting baseline count
+                visits = 1042; // Baseline counter starting number
             } else {
-                if (!sessionStorage.getItem('has_counted')) {
-                    visits = parseInt(visits) + 1;
-                }
+                visits = parseInt(visits, 10) + 1;
             }
-            localStorage.setItem('portfolio_visits', visits);
-            sessionStorage.setItem('has_counted', 'true');
+            localStorage.setItem('portfolio-visits', visits);
+            const visitorElement = document.getElementById('visitor-count');
+            if (visitorElement) {
+                visitorElement.textContent = visits.toLocaleString();
+            }
 
-            document.getElementById('visitor-count').textContent = parseInt(visits).toLocaleString();
-
-            // Load live endorsements
+            // Load live endorsements on page start
             loadEndorsements();
+
+            // Handle Endorsement Form Submission
+            const endorsementForm = document.getElementById('endorsementForm');
+            if (endorsementForm) {
+                endorsementForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const submitBtn = document.getElementById('endorse-submit-btn');
+                    const statusDiv = document.getElementById('endorsement-form-status');
+                    
+                    const name = document.getElementById('endorse_name').value.trim();
+                    const role = document.getElementById('endorse_role').value.trim();
+                    const message = document.getElementById('endorse_message').value.trim();
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    statusDiv.className = 'hidden mb-6 p-4 rounded-lg text-sm';
+
+                    try {
+                        const response = await fetch('/api/endorsements', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ name, role, message })
+                        });
+
+                        statusDiv.classList.remove('hidden');
+                        if (response.ok) {
+                            statusDiv.className = 'mb-6 p-4 rounded-lg text-sm bg-emerald-950 border border-emerald-800 text-emerald-300';
+                            statusDiv.textContent = 'Thank you! Your endorsement has been submitted successfully.';
+                            endorsementForm.reset();
+                            loadEndorsements(); // Reloads endorsements list if immediate display is supported
+                        } else {
+                            statusDiv.className = 'mb-6 p-4 rounded-lg text-sm bg-red-950 border border-red-800 text-red-300';
+                            statusDiv.textContent = 'Submission failed. Please check your network connection and try again.';
+                        }
+                    } catch (err) {
+                        statusDiv.classList.remove('hidden');
+                        statusDiv.className = 'mb-6 p-4 rounded-lg text-sm bg-red-950 border border-red-800 text-red-300';
+                        statusDiv.textContent = 'An error occurred while submitting. Please try again later.';
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Endorsement';
+                    }
+                });
+            }
         });
     </script>
 </body>
