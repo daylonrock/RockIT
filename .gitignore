@@ -1,4 +1,15 @@
-﻿api/local.settings.json
+# Operating System junk
+.DS_Store
+Thumbs.db
+
+# VS Code local settings
 .vscode/
-__pycache__/
-.venv/
+
+# Environment variables and secrets
+.env
+*.pem
+*.key
+
+# Azure / Bicep local build artifacts
+*.publish.json
+.azure/
